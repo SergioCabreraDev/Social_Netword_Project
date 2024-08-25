@@ -15,6 +15,10 @@ $color-red: #f7452f;
     display: flex;
     justify-content: space-between;
     padding: 1rem 5rem;
+    align-items: center;
+    background-color: $color-dark;
+    box-shadow: 1px 1px 9px black;
+    #direct{display: none;}
     .bottom-nav {
       display: flex;
       gap: 2rem;
@@ -37,7 +41,9 @@ $color-red: #f7452f;
 
 @media (max-width: 1250px) {
   .header {
-    .logo{display: none;}
+    #direct{display: flex;}
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
     .bottom-nav {
       display: flex;
       position: fixed;
