@@ -1,18 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './componens/navbar/navbar.component';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, NavbarComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'] // Corregido de styleUrl a styleUrls
+  imports: [],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class AppComponent implements OnInit {
-
+export class NavbarComponent implements AfterViewInit {
   activeLink: string = 'option1'; // El enlace activo por defecto
 
   // Referencias a los elementos
@@ -22,7 +17,7 @@ export class AppComponent implements OnInit {
   @ViewChild('option4') estilo4!: ElementRef;
   @ViewChild('option5') estilo5!: ElementRef;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.setActive(this.activeLink);
   }
 
@@ -46,7 +41,7 @@ export class AppComponent implements OnInit {
     } else if (link === 'option5') {
       this.estilo5.nativeElement.classList.add('active');
     }
-    
+
     // Actualiza el enlace activo
     this.activeLink = link;
   }
