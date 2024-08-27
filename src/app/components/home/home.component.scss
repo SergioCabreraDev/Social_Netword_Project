@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+
+.margins{
+ margin: $marginPc;
+}
+
+@media (max-width: 1250px) 
+{
+
+    .margins{
+        margin: $marginMobile;
+    }
+
+}

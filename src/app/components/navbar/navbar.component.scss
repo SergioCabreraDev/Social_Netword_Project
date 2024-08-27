@@ -18,6 +18,11 @@ $color-red: #f7452f;
     align-items: center;
     background-color: $color-dark;
     box-shadow: 1px 1px 9px black;
+    position: fixed; /* Fijar la posición */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    z-index: 100; /* Asegurarse de que esté sobre otros elementos */
     #direct{display: none;}
     .bottom-nav {
       display: flex;

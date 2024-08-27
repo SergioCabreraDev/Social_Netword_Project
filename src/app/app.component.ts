@@ -2,7 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './componens/navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-root',

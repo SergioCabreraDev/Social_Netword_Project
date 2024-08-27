@@ -1,13 +1,22 @@
+import { EmitterComunicationService } from './../../services/emitter-comunication.service';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements AfterViewInit {
+
+  constructor(
+    private serviceEmitter: EmitterComunicationService
+  ){
+
+  }
+
   activeLink: string = 'option1'; // El enlace activo por defecto
 
   // Referencias a los elementos
@@ -16,8 +25,10 @@ export class NavbarComponent implements AfterViewInit {
   @ViewChild('option3') estilo3!: ElementRef;
   @ViewChild('option4') estilo4!: ElementRef;
   @ViewChild('option5') estilo5!: ElementRef;
+  @ViewChild('option6') estilo6!: ElementRef;
 
   ngAfterViewInit(): void {
+    this.serviceEmitter.emitterNewStateNav.subscribe()
     this.setActive(this.activeLink);
   }
 
@@ -28,6 +39,7 @@ export class NavbarComponent implements AfterViewInit {
     this.estilo3.nativeElement.classList.remove('active');
     this.estilo4.nativeElement.classList.remove('active');
     this.estilo5.nativeElement.classList.remove('active');
+    this.estilo6.nativeElement.classList.remove('active');
 
     // Activa el estilo en el elemento correspondiente
     if (link === 'option1') {
@@ -40,6 +52,8 @@ export class NavbarComponent implements AfterViewInit {
       this.estilo4.nativeElement.classList.add('active');
     } else if (link === 'option5') {
       this.estilo5.nativeElement.classList.add('active');
+    } else if (link === 'option6') {
+      this.estilo6.nativeElement.classList.add('active');
     }
 
     // Actualiza el enlace activo

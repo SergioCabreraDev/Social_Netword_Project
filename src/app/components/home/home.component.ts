@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { PublicationComponent } from './publication/publication.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [PublicationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
