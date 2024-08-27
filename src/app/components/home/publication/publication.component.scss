@@ -1,3 +1,55 @@
 hr {
     border: 1px solid rgb(52, 52, 52);
   }
+
+  
+.post {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+  
+}
+.username {
+    font-weight: bold;
+    color: white;
+}
+.date {
+    color: #c5c5c5;
+    margin-left: 10px;
+    
+}
+.content {
+    padding: 0 20px 10px;
+}
+.hashtags {
+    color: #1DA1F2;
+    margin-top: 10px;
+}
+.image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.action-icon {
+    margin-right: 15px;
+    color: #777;
+}

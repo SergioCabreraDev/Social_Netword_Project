@@ -1,23 +1,16 @@
-import { EmitterComunicationService } from './../../services/emitter-comunication.service';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
 
-  constructor(
-    private serviceEmitter: EmitterComunicationService
-  ){
-
-  }
-
-  activeLink: string = 'option1'; // El enlace activo por defecto
+  activeLink: string = ''; // El enlace activo por defecto
 
   // Referencias a los elementos
   @ViewChild('option1') estilo1!: ElementRef;
@@ -27,36 +20,56 @@ export class NavbarComponent implements AfterViewInit {
   @ViewChild('option5') estilo5!: ElementRef;
   @ViewChild('option6') estilo6!: ElementRef;
 
-  ngAfterViewInit(): void {
-    this.serviceEmitter.emitterNewStateNav.subscribe()
-    this.setActive(this.activeLink);
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // Detecta la ruta activa en la carga inicial
+    const currentRoute = this.router.url;
+    this.setActive(currentRoute);
   }
 
-  setActive(link: string) {
-    // Elimina el estilo de todos los elementos
-    this.estilo1.nativeElement.classList.remove('active');
-    this.estilo2.nativeElement.classList.remove('active');
-    this.estilo3.nativeElement.classList.remove('active');
-    this.estilo4.nativeElement.classList.remove('active');
-    this.estilo5.nativeElement.classList.remove('active');
-    this.estilo6.nativeElement.classList.remove('active');
+  ngAfterViewInit(): void {
+    // Suscripción a eventos de navegación
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = event.urlAfterRedirects;
+        this.setActive(currentRoute);
+      }
+    });
+  }
 
-    // Activa el estilo en el elemento correspondiente
-    if (link === 'option1') {
-      this.estilo1.nativeElement.classList.add('active');
-    } else if (link === 'option2') {
-      this.estilo2.nativeElement.classList.add('active');
-    } else if (link === 'option3') {
-      this.estilo3.nativeElement.classList.add('active');
-    } else if (link === 'option4') {
-      this.estilo4.nativeElement.classList.add('active');
-    } else if (link === 'option5') {
-      this.estilo5.nativeElement.classList.add('active');
-    } else if (link === 'option6') {
-      this.estilo6.nativeElement.classList.add('active');
-    }
+  setActive(route: string) {
+    // Espera un breve tiempo para asegurarse de que los elementos estén disponibles
+    setTimeout(() => {
+      // Elimina el estilo de todos los elementos
+      this.removeAllActiveStyles();
 
-    // Actualiza el enlace activo
-    this.activeLink = link;
+      // Activa el estilo en el elemento correspondiente
+      if (route === '/home') {
+        this.estilo1.nativeElement.classList.add('active');
+      } else if (route === '/interactions') {
+        this.estilo2.nativeElement.classList.add('active');
+      } else if (route === '/search') {
+        this.estilo3.nativeElement.classList.add('active');
+      } else if (route === '/account') {
+        this.estilo4.nativeElement.classList.add('active');
+      } else if (route === '/settings') {
+        this.estilo5.nativeElement.classList.add('active');
+      } else if (route === '/messaging') {
+        this.estilo6.nativeElement.classList.add('active');
+      }
+
+      // Actualiza el enlace activo
+      this.activeLink = route;
+    }, 0); // El tiempo 0 indica que se ejecutará después de que Angular termine la renderización
+  }
+
+  private removeAllActiveStyles() {
+    this.estilo1?.nativeElement.classList.remove('active');
+    this.estilo2?.nativeElement.classList.remove('active');
+    this.estilo3?.nativeElement.classList.remove('active');
+    this.estilo4?.nativeElement.classList.remove('active');
+    this.estilo5?.nativeElement.classList.remove('active');
+    this.estilo6?.nativeElement.classList.remove('active');
   }
 }

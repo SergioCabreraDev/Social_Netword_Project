@@ -1,0 +1,110 @@
+@import '../../../styles/variables.scss';
+
+.margins{
+    margin: $marginPc;
+   }
+   
+   @media (max-width: 1250px) 
+   {
+   
+       .margins{
+           margin: $marginMobile;
+       }
+   
+   }
+   .profile-card {
+    background-color: #111;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.profile-info {
+    flex-grow: 1;
+}
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+.profile-username {
+    color: #777;
+    margin: 5px 0;
+}
+.profile-location {
+    margin: 5px 0;
+}
+.profile-stats {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #777;
+}
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.edit-button {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.tab.active {
+    border-bottom: 2px solid #fff;
+}
+.post {
+    margin-bottom: 20px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.post-username {
+    font-weight: bold;
+    color: white;
+}
+.post-date {
+    color: #777;
+    margin-left: 10px;
+}
+.post-content {
+    margin-bottom: 10px;
+}
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+}
+.action-icon {
+    margin-right: 20px;
+}
