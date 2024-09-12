@@ -1,0 +1,38 @@
+
+<div class="element">
+
+    <form class="form" #registerForm="ngForm" (ngSubmit)="formSend(registerForm)">
+        <div class="img_logo"><img src="../../../../assets/img/logorender.png" width="130" alt=""></div>
+  
+
+        <input class="form-control" type="email" required=""  [(ngModel)]="user.email" required name="email" email placeholder="Email">
+
+
+        <input class="form-control"  type="text" required="" [(ngModel)]="user.username" required name="username" username  placeholder="Nombre de Usuario">
+
+
+        <input class="form-control"   type="password" required="" [(ngModel)]="user.password" required name="password" password placeholder="Contraseña">
+
+
+      <div >
+        <button class="cssbuttons-io-button" [disabled]="button" type="submit">
+            Registrar
+            <div class="icon">
+                <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                ></path>
+                </svg>
+            </div>
+            </button>
+      </div>
+
+    </form>
+</div>

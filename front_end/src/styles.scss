@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../src/styles/variables.scss';
+body{
+    background-color: rgb(10, 10, 10);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  a{
+    color: inherit;
+  }
+
+  p{
+    color: white;
+  }
+
+
+  .btn-primary{
+    background-color: $principalColor;
+    border: $principalColor;
+    
+  }
+
+
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: $principalColor !important;
+   
+    border-color: $principalColor !important;;
+  }
+
+  .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: $principalColor !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px $principalColor;
+    border-color: $principalColor !important;;
+  }
+
+  .form-control:focus {
+    border-color: $principalColor;
+    background-color: #1b1b1b;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px $principalColor;
+    color: whitesmoke;
+  }
+.form-control{
+
+    background-color: #1b1b1b;
+    border: #4d4d4e;
+    color: whitesmoke;
+}

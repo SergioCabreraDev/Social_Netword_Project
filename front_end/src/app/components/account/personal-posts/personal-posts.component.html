@@ -1,0 +1,33 @@
+<div class="profile-tabs">
+    <a (click)="stateProfileTabs('option1')"><div class="tab" #option1>Posts</div></a>
+    <a (click)="stateProfileTabs('option2')"><div class="tab" #option2>Republicaciones</div></a>
+    <a (click)="stateProfileTabs('option3')"><div class="tab" #option3>Me Gustas</div></a>
+  </div>
+  
+@for (post of posts; track $index) {
+    <div class="post">
+        <div class="post-header">
+            <img src="{{currentUser.profilePicture}}" alt="Post Avatar" class="post-avatar">
+            <span class="post-username">{{currentUser.username}}</span>
+            <span class="post-date">{{post.timeAgo}}</span>
+        </div>
+        <div class="post-content">
+            <p>{{post.content}}</p>
+            @if (post.imageUrl == undefined ) {
+                         
+            }@else {
+                <img src="{{post.imageUrl}}" alt="" class="image">
+            }
+        </div>
+        <div class="post-actions">
+            <i class="far fa-heart action-icon"></i>
+            <i class="far fa-comment action-icon"></i>
+            <i class="fas fa-retweet action-icon"></i>
+            <i class="far fa-paper-plane action-icon"></i>
+        </div>
+    </div>
+    <hr style="margin-bottom: 1rem; height: 1px;
+    border: 0;
+    border-top: 1px solid #333333;">
+}
+

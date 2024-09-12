@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SocialnetworkBackendApplication<socialnetwork_backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.backend.socialnetwork.socialnetwork_backend.SocialnetworkBackendApplication",
+            "projectName": "socialnetwork_backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

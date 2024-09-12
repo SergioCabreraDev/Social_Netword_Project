@@ -1,0 +1,61 @@
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.tab.active {
+    border-bottom: 2px solid #fff;
+}
+.post {
+    margin-bottom: 20px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.post-username {
+    font-weight: bold;
+    color: white;
+}
+.post-date {
+    color: #777;
+    margin-left: 10px;
+}
+.post-content {
+    margin-bottom: 10px;
+}
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+}
+.action-icon {
+    margin-right: 20px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.post:hover{
+    background-color: #242424;
+}
+
+.post{
+    padding: 5px;
+    border-radius: 1rem;
+}

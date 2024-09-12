@@ -1,0 +1,62 @@
+<div class="margins">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-info">
+                <h1 class="profile-name">{{currentUser.username}}</h1>
+                <p class="profile-location">{{currentUser.bio}}</p>
+                <div class="profile-stats">
+                    <i class="fas fa-user-friends"></i>
+                    <span>56 seguidores</span>
+                </div>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <img src="{{currentUser.profilePicture}}" alt="Avatar" class="profile-avatar">
+        </div>
+        <button id="newpost" data-bs-toggle="modal" (click)="showModal()" data-bs-target="#exampleModalCenter" class="edit-button">Editar perfil</button>
+        
+        <app-personal-posts></app-personal-posts>
+        
+    </div>
+</div>
+    
+    <!-- Modal para Bootstrap 5 -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color: whitesmoke;">Editar Perfil</h5>
+                    <button #botonCerrar type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"
+                    style="background: none;
+                    color: inherit;
+                    border: none;
+                    padding: 0;
+                    font: inherit;
+                    cursor: pointer;
+                    outline: inherit;"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="white"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg></button>
+                </div>
+
+
+
+
+                <div class="modal-body">
+                    <form action="" enctype='multipart/form-data' #postForm="ngForm" (ngSubmit)="formUpdate(postForm)">
+                        <input style="margin-top: 1rem;" class="form-control" name="username" placeholder="Nombre de usuario" [(ngModel)]="userForm.username">
+                        <input style="margin-top: 1rem;" class="form-control" name="bio" placeholder="Biografía" [(ngModel)]="userForm.bio">
+                        <input style="margin-top: 1rem;" class="form-control" name="profilePicture" type="text" placeholder="URL de una imagen" [(ngModel)]="userForm.profilePicture">
+                        
+                           
+                            
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Aplicar Cambios</button>
+                            </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
