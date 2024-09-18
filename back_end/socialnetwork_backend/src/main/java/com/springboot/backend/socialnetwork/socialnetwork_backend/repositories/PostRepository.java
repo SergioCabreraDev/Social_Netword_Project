@@ -12,6 +12,8 @@ import com.springboot.backend.socialnetwork.socialnetwork_backend.entities.Users
 public interface PostRepository extends CrudRepository<Posts, Long> {
 
     List<Posts> findAll();
+
+    Optional<Posts> findPostByPostId(Long id);
     
     @Query(value = "select posts from Posts posts where posts.user.user_id = ?1")
     List<Posts> findPostByUserId(Long id);

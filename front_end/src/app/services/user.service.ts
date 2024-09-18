@@ -35,6 +35,10 @@ updateUser(body: any, id: number){
   return this.http.put<any>(`${this.url}`,body, { params });
 }
 
+findAllUsers(): Observable<User[]>{
+  return this.http.get<User[]>(this.url);
+}
+
   
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Error desconocido';

@@ -18,8 +18,8 @@ $color-grey: #cccccc;
     justify-content: space-between;
     padding: 1rem 5rem;
     align-items: center;
-    background-color: $color-dark;
-    box-shadow: 1px 1px 9px black;
+
+
     position: fixed; /* Fijar la posición */
     top: 0; /* Posición en la parte superior */
     left: 0; /* Alinear a la izquierda */
@@ -36,7 +36,7 @@ $color-grey: #cccccc;
         justify-content: center;
         text-align: center;
         font-size: 0.8rem;
-        color: $color-white;
+    
       }
       .active {
         color: $principalColor;
@@ -58,7 +58,6 @@ $color-grey: #cccccc;
       left: 0;
       right: 0;
       padding: 0.8rem 0;
-      background-color: $color-dark;
       z-index: 99;
       will-change: transform;
       transform: translateZ(0);
@@ -71,7 +70,7 @@ $color-grey: #cccccc;
         justify-content: center;
         text-align: center;
         font-size: 0.8rem;
-        color: $color-grey;
+
       }
   
       &-link {
@@ -88,20 +87,3 @@ $color-grey: #cccccc;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .nuevo-estilo {
-//     background-color: yellow;
-//     color: red;
-//   }

@@ -33,9 +33,7 @@
     color: #777;
     margin-left: 10px;
 }
-.post-content {
-    margin-bottom: 10px;
-}
+
 .post-actions {
     display: flex;
     justify-content: space-between;
@@ -58,4 +56,45 @@
 .post{
     padding: 5px;
     border-radius: 1rem;
+}
+
+.like>svg:hover{ /*target the image with css*/
+    fill: red;
+    stroke: red;
+    transition: 500ms;
+    
+  }
+.like-active>svg{
+  fill: red;
+  stroke: red;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+
+    .mg{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5%;
+    }
+    .rt{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5%;
+    }
+
+}
+.comments{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+.action-icon {
+   
+    color: #777;
 }

@@ -20,6 +20,80 @@ body{
     color: white;
   }
 
+  // .post {
+  //   background-color: whitesmoke;
+  // }
+
+  // .light-theme{
+  //   .post{
+  //     background-color: whitesmoke;
+  //   }
+  //   body{
+  //     background-color: rgb(255, 255, 255);
+  // }
+  // }
+/* Estilo para el tema oscuro */
+.dark-theme {
+  background-color: #000000;
+  color: whitesmoke;
+  header{
+    box-shadow: 1px 1px 9px black;
+    background-color: #0e0e0e;
+  }
+  .post {
+    background-color: #111;
+  }
+  #logoForLight{
+    display: none;
+  }
+  &-item {color: white;}
+  .form-control{
+
+    background-color: rgb(38, 38, 38);
+    border: #4d4d4e;
+    color: rgb(0, 0, 0);
+}
+  .bottom-nav {background-color: #0e0e0e;}
+
+}
+
+/*-----------------------------------------------------*/
+
+/* Estilo para el tema claro */
+.light-theme {
+  background-color: #f2f2f2;
+  color: #000000;
+
+  &-item {color: black;}
+
+  #logoForDark{
+    display: none;
+  }
+
+  .form-control{
+
+      background-color: whitesmoke;
+      border: #4d4d4e;
+      color: rgb(0, 0, 0);
+  }
+
+  header{
+    background-color: #ffffff;
+    border: 1px solid gainsboro;
+  
+  }
+  p{color: black;}
+  span{color: black;}
+  .post{
+    background-color: #ffffff;
+    border: 1px solid gainsboro;
+  }
+  .container{
+     background-color: #ffffff;
+  }
+  .bottom-nav {background-color: #ffffff;}
+}
+
 
   .btn-primary{
     background-color: $principalColor;
@@ -40,15 +114,4 @@ body{
     border-color: $principalColor !important;;
   }
 
-  .form-control:focus {
-    border-color: $principalColor;
-    background-color: #1b1b1b;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px $principalColor;
-    color: whitesmoke;
-  }
-.form-control{
 
-    background-color: #1b1b1b;
-    border: #4d4d4e;
-    color: whitesmoke;
-}

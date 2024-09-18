@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,6 +65,17 @@ public class PostController {
     @GetMapping
     public List<Posts> findAllPosts(){
         return services.findAll();
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<?> findPostById(@PathVariable Long id){
+        Optional<Posts> post = services.findPostById(id);
+        Posts postSuccess =post.get();
+        if (!post.isPresent()) {
+            return ResponseEntity.badRequest().body("post not found");
+        }
+
+        return ResponseEntity.ok(postSuccess);
     }
 
     @GetMapping("/profile")

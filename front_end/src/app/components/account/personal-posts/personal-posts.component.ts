@@ -2,33 +2,38 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { User } from '../../../models/User';
 import { UserService } from '../../../services/user.service';
 import { LoginServiceService } from '../../../services/login-service.service';
-import { Post } from '../../../models/Post';
+import { LikesDTO, Post } from '../../../models/Post';
 import { PostServiceService } from '../../../services/post-service.service';
 import { AccountComponent } from '../account.component';
 import { formatDistanceToNow } from 'date-fns';
 import { es, fi } from 'date-fns/locale';
+import { LikeService } from '../../../services/like.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-personal-posts',
   standalone: true,
-  imports: [AccountComponent],
+  imports: [AccountComponent, CommonModule],
   templateUrl: './personal-posts.component.html',
   styleUrl: './personal-posts.component.scss'
 })
 export class PersonalPostsComponent implements OnInit, AfterViewInit {
 
 
+
   activateState: string = 'option1'; // El enlace activo por defecto
   token!: string;
   currentUser!: User;
   posts: Post[] = [];
+  likeDTO: LikesDTO;
 
   constructor(
     private serviceUser: UserService,
     private servicePost: PostServiceService,
-    private serviceLogin: LoginServiceService
+    private serviceLogin: LoginServiceService,
+    private serviceLike: LikeService
   ){
-    
+    this.likeDTO = new LikesDTO();
   }
 
 
@@ -79,7 +84,8 @@ export class PersonalPostsComponent implements OnInit, AfterViewInit {
               .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
               .map(post => ({
                 ...post,
-                timeAgo: this.calculateTimeAgo(post.createdAt)
+                timeAgo: this.calculateTimeAgo(post.createdAt),
+                likedByCurrentUser: post.likes.some(like => like.user.user_id === this.currentUser.user_id),
               }));
       console.log()
 
@@ -90,7 +96,9 @@ export class PersonalPostsComponent implements OnInit, AfterViewInit {
   }
 
 
-
+  changeStateLike(_t11: Post) {
+    this.serviceLike.changeStateLike(_t11, this.likeDTO, this.currentUser)
+  }
 
 
 
