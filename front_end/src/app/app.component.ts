@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   }
   ngAfterViewInit(): void {
-    this.themeService.setTheme('dark');
+    this.themeService.setTheme('light');
   }
 
   ngOnInit(): void {

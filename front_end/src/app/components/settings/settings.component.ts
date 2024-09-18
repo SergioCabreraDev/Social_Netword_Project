@@ -32,9 +32,10 @@ export class SettingsComponent {
 
 
   addValue(arg0: string) {
+    console.log('addValue invoked with:', arg0);
     this.themeService.setTheme(arg0);
- 
-    }
+  }
+  
   
   
   }
