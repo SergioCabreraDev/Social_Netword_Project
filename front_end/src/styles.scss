@@ -54,7 +54,20 @@ body{
     color: rgb(0, 0, 0);
 }
   .bottom-nav {background-color: #0e0e0e;}
+    .modal-content {
+      background-color: $secudaryColor;
+  }
+  .modal-header{
+      border-bottom: 1px solid #4d4d4e;
+  }
+  .modal-footer{
+      border-top: 1px solid #4d4d4e;
+  }
+  h5{color: whitesmoke;}
 
+  .user-card{background-color: #111;}
+  .input{background-color: #111; color: whitesmoke;}
+  .profile-card{background-color: #111;}
 }
 
 /*-----------------------------------------------------*/
@@ -95,8 +108,14 @@ body{
   .bottom-nav {background-color: #ffffff;}
   .input {color: black;}
   #direct{stroke: black;}
-}
+  h5{color: #000000;}
+  .profile-card{background-color: #ffffff;  border: 1px solid gainsboro;}
 
+}
+#closeButton{
+  stroke: #4d4d4e;
+  fill: #4d4d4e;
+}
 
   .btn-primary{
     background-color: $principalColor;

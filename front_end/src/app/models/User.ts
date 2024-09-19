@@ -8,9 +8,15 @@ export class User {
     profilePicture!: string;
     bio!: string;
     createdAt!: any;
+    configuration!: Configuration;
 }
 
 export class Credentials {
     email!: string;
     password!: string;
+}
+
+export class Configuration {
+    config_id!: number;
+    theme: string = 'dark';
 }

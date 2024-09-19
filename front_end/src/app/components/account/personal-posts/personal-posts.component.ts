@@ -40,7 +40,6 @@ export class PersonalPostsComponent implements OnInit, AfterViewInit {
 
   // Referencias a los elementos
   @ViewChild('option1') estilo1!: ElementRef;
-  @ViewChild('option2') estilo2!: ElementRef;
   @ViewChild('option3') estilo3!: ElementRef;
 
   ngAfterViewInit() {
@@ -114,8 +113,6 @@ export class PersonalPostsComponent implements OnInit, AfterViewInit {
       // Activa el estilo en el elemento correspondiente
       if (state === 'option1') {
         this.estilo1.nativeElement.classList.add('active');
-      } else if (state === 'option2') {
-        this.estilo2.nativeElement.classList.add('active');
       } else if (state === 'option3') {
         this.estilo3.nativeElement.classList.add('active');
       }
@@ -126,7 +123,6 @@ export class PersonalPostsComponent implements OnInit, AfterViewInit {
 
   private removeAllActiveStyles() {
     this.estilo1?.nativeElement.classList.remove('active');
-    this.estilo2?.nativeElement.classList.remove('active');
     this.estilo3?.nativeElement.classList.remove('active');
   }
 }

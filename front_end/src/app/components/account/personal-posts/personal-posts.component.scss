@@ -2,14 +2,13 @@
     display: flex;
     border-bottom: 1px solid #333;
     margin-bottom: 20px;
-    color: whitesmoke;
 }
 .tab {
     padding: 10px 20px;
     cursor: pointer;
 }
 .tab.active {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #5f5e5e;
 }
 .post {
     margin-bottom: 20px;
@@ -27,7 +26,6 @@
 }
 .post-username {
     font-weight: bold;
-    color: white;
 }
 .post-date {
     color: #777;
@@ -47,10 +45,6 @@
     width: 100%;
     height: auto;
     margin-top: 10px;
-}
-
-.post:hover{
-    background-color: #242424;
 }
 
 .post{
@@ -78,7 +72,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5%;
+      gap: 1%;
     }
     .rt{
       display: flex;
@@ -98,3 +92,35 @@
    
     color: #777;
 }
+
+.like>svg:hover{ /*target the image with css*/
+    fill: red;
+    stroke: red;
+    transition: 500ms;
+    
+  }
+.like-active>svg{
+  fill: red;
+  stroke: red;
+}
+
+
+  #comment>svg:hover{ /*target the image with css*/
+    fill: rgb(0, 132, 255);
+    stroke: rgb(0, 132, 255);
+    transition: 500ms;
+    
+  }
+
+  #rt>svg:hover{ /*target the image with css*/
+    
+    stroke: rgb(0, 255, 0);
+    transition: 500ms;
+    
+  }
+  #share>svg:hover{ /*target the image with css*/
+    
+    stroke: rgb(95, 95, 95);
+    transition: 500ms;
+    
+  }
