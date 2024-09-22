@@ -2,8 +2,9 @@
 <div class="element">
 
     <form class="form" #loginForm="ngForm" (ngSubmit)="formSend(loginForm)">
-        <div class="img_logo"><img src="../../../../assets/img/logorender.png" width="130" alt="" ></div>
-  
+        <div class="img_logo"><img id="logoForDark" src="../../../../assets/img/logorender.png" width="130" alt="" ></div>
+        <div class="img_logo"><img id="logoForLight" src="../../../../assets/img/logorender1.png" width="130" alt="" ></div>
+
 
         <input class="form-control" type="email" required=""  [(ngModel)]="credentials.email" required name="email" email placeholder="Email">
 

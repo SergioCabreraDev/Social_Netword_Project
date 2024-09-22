@@ -27,7 +27,7 @@ import com.springboot.backend.socialnetwork.socialnetwork_backend.repositories.P
 import com.springboot.backend.socialnetwork.socialnetwork_backend.repositories.UserRepository;
 import com.springboot.backend.socialnetwork.socialnetwork_backend.services.LikeServices;
 
-@CrossOrigin(origins =  {"http://localhost:4200"}, originPatterns = {"*"})  // Permite peticiones desde localhost:4200 (Angular frontend)
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.0.27:4200"})  // Permite peticiones desde localhost:4200 (Angular frontend)
 @RestController
 @RequestMapping("/api/likes")
 public class LikeController {

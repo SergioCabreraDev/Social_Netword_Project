@@ -68,6 +68,10 @@ body{
   .user-card{background-color: #111;}
   .input{background-color: #111; color: whitesmoke;}
   .profile-card{background-color: #111;}
+  .container{
+    background-color: #111;
+ }
+ select{background-color: rgb(38, 38, 38); color: whitesmoke; border: 1px solid rgb(38, 38, 38)}
 }
 
 /*-----------------------------------------------------*/
@@ -110,8 +114,17 @@ body{
   #direct{stroke: black;}
   h5{color: #000000;}
   .profile-card{background-color: #ffffff;  border: 1px solid gainsboro;}
-
+  select{background-color: f2f2f2; color: black; border: 1px solid #f2f2f2;}
 }
+
+
+
+
+
+
+
+
+
 #closeButton{
   stroke: #4d4d4e;
   fill: #4d4d4e;

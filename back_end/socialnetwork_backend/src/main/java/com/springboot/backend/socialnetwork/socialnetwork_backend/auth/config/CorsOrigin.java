@@ -17,12 +17,12 @@ public class CorsOrigin {
             public void addCorsMappings(CorsRegistry registry){
                 
                 registry.addMapping("/login")
-                    .allowedOrigins("http://localhost:4200")
+                    .allowedOrigins("http://localhost:4200", "http://192.168.0.27:4200")
                     .allowedMethods("*")
                     .exposedHeaders("Authorization"); // Asegúrate de exponer el encabezado Authorization
 
                 registry.addMapping("/api/**")
-                    .allowedOrigins("http://localhost:4200")
+                .allowedOrigins("http://localhost:4200", "http://192.168.0.27:4200")
                     .allowedMethods("*")
                     .exposedHeaders("Authorization"); // Asegúrate de exponer el encabezado Authorization
             }
