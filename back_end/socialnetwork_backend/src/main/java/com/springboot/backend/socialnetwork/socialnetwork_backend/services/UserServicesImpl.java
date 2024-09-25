@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot.backend.socialnetwork.socialnetwork_backend.entities.Config;
 import com.springboot.backend.socialnetwork.socialnetwork_backend.entities.Users;
 import com.springboot.backend.socialnetwork.socialnetwork_backend.repositories.UserRepository;
 
@@ -26,6 +27,11 @@ public class UserServicesImpl implements UserServices {
     @Transactional
     public Users save(Users user) {
 
+        Config config = new Config();
+        config.setTheme("light");
+        config.setUser(user);
+        
+        user.setConfig(config);
         // Codifica (hashea) la contraseña del usuario usando el passwordEncoder y la establece en el usuario
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 

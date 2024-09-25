@@ -8,7 +8,7 @@ export class User {
     profilePicture!: string;
     bio!: string;
     createdAt!: any;
-    configuration!: Configuration;
+    config!: Config;
 }
 
 export class Credentials {
@@ -16,7 +16,8 @@ export class Credentials {
     password!: string;
 }
 
-export class Configuration {
-    config_id!: number;
+export class Config {
+    id!: number;
     theme: string = 'dark';
+
 }
